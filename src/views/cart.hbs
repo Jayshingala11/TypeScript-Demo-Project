@@ -1,0 +1,21 @@
+<main id="cart-container">
+  <ul class="cart__item-list">
+    <li class="cart__item">
+      <h1>
+        Dummy
+      </h1>
+      <h2>Quantity:- 0
+      </h2>
+      <form action="/cart-delete-item" method="POST">
+        <input type="hidden" value="<%= p.id %>" name="productId" />
+        <input type="hidden" name="token" value="<%= Token %>" />
+        <button type="submit" class="btn danger deleteBtn">Delete</button>
+      </form>
+    </li>
+  </ul>
+  <hr />
+  {{#if isAuthenticated}}
+  <div class="centered">
+    <a class="btn" href="/checkout">Order Now!</a>
+  </div>
+  {{/if}}
